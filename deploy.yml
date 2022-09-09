@@ -1,10 +1,10 @@
 ---
-- hosts: webservers
+- hosts: 172.31.61.167
   vars:
   - warName: java-example.war
-  - warRemotePath: /opt/apache-tomcat-8.5.78/webapps/
+  - warRemotePath: /opt/apache-tomcat9/webapps/
 
   tasks:
   - name: Copy WAR to Remote server
-    copy: src=target/{{ warName }} dest={{ warRemotePath }}/{{ warName }} owner=tomcat group=tomcat
+    copy: src=target/{{ warName }} dest={{ warRemotePath }}/{{ warName }} owner=manager-gui group=tomcat
    
